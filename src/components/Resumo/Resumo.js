@@ -21,6 +21,11 @@ class Resumo extends Component {
         }
     }
 
+    componentDidMount(){
+        fetch("http://www.devup.com.br/php/api-dashboard/api")
+        .then(resultado => resultado.json().then(dados => this.setState(dados)));
+    }
+
     render(){
         return (
             <div>
@@ -94,5 +99,7 @@ class Resumo extends Component {
             )
         }
       }
+
+      
       
 export default Resumo;
